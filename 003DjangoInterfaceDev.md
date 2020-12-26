@@ -7,7 +7,9 @@
     * 第二种方法：pip setup.py install
     
 3. 第二种方法的安装步骤
-    > 步骤一：访问Django官网下载压缩包（1.6以上版本完全兼容Python3.*） https://www.djangoproject.com/download/  
+
+
+      步骤一：访问Django官网下载压缩包（1.6以上版本完全兼容Python3.*） https://www.djangoproject.com/download/  
       步骤二：解压Django压缩包，并且和Python安装目录放在**同一个根目录**  
       步骤三：cmd命令窗口进入Django目录，执行命令 python setup.py install 
       步骤四：Django最后安装在python的Lib下site-packages目录中
