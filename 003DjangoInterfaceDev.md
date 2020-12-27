@@ -37,7 +37,7 @@
 
 ![django项目创建](./img/django项目创建02.png)
 
-2. 启动django
+## 启动django
     * cmd命令窗口回到根目录RTX下，执行python manage.py runserver命令
     * Django会以127.0.0.1:8000默认配置启动开发服务器
     * 打开浏览器访问127.0.0.2:8000,出现以下页面则启动成功
@@ -55,6 +55,45 @@
     
 ![django端口被占用](./img/django端口被占用01.png)
 
+## 创建app应用
+    1. 根目录下执行：python manage.py startapp + app名称
+
+![django中app应用创建](./img/django中app应用创建01.png)      
+
+    2. 添加app应用程序添加到settings.py文件中的INSTALLED_APPS列表中
+    
+![添加应用程序](./img/添加应用程序01.png)
+
+    3. views.py文件中编写视图
+```python 
+# coding:utf-8
+from django.http.response import HttpResponse
 
 
-                 
+def login(request):
+    return HttpResponse('index')
+```
+    
+![编写视图](./img/编写视图01.png)
+
+    4. urls.py路由配置文件中加入路由，将其映射到上面新增的视图
+    
+```python 
+from django.contrib import admin
+from django.urls import path
+from rtx_app.views import login
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('login/', login)
+]
+```
+
+![路由配置](./img/路由配置01.png)
+
+    5. 浏览器访问127.0.0.1.8000/login/
+    
+![浏览器访问](./img/浏览器访问01.png)
+
+  
+          
