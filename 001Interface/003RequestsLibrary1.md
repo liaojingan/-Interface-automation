@@ -233,6 +233,14 @@ def login(in_data, get_token=True):
 if __name__ == '__main__':
     text = login({'username': 'md0144', 'password': 'lja199514'}, get_token=False)
     print(text)
+
+"""
+{'code': 20000,
+ 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTM2NTMzNjcsInVzZXJJZCI6MTAxNDgsInVzZXJuYW1lIjoibWQwMTQ0In0.tSq1jWHA2hutv5mn2ZR_zwgxmksrGCLwDG8UhTncmW0'},
+ 'flag': '松勤教育',
+ 'msg': '成功',
+ 'success': False}
+"""
 ```
     
     2、Cookie（一般前后端不分离项目使用）
@@ -271,9 +279,9 @@ if __name__ == '__main__':
     
     1、登录接口url    
     一、http协议接口
-        http://120.55.190.222:7080/mgr/login/login.html
+        http://120.55.190.222:7080/api/mgr/loginReq
     二、https协议接口
-        https://120.55.190.222/mgr/login/login.html
+        https://120.55.190.222/api/mgr/loginReq
         
     2、请求体
     
@@ -304,6 +312,76 @@ if __name__ == '__main__':
         * 如果参数是json类型的，直接可传入字典，那么content-type就是json格式的
         * 如果参数是params类型的，参数直接放到url后面
         
+```python
+# coding=utf-8
+# @File     : cookie_test.py
+# @Time     : 2021/2/18 19:35
+# @Author   : jingan
+# @Email    : 3028480064@qq.com
+# @Software : PyCharm
+
+import requests
+
+
+def login(in_data):
+    url = 'http://120.55.190.222:7080/api/mgr/loginReq'
+    payload = in_data
+    resp = requests.post(url=url, data=payload)
+    print(resp.text)
+    # 打印响应头，返回的是字典数据一般用单引号引用，包含Set-Cookie值
+    print(resp.headers)
+
+if __name__ == '__main__':
+    login({'username': 'auto', 'password': 'sdfsdfsdf'})
+
+
+# 响应结果
+'''
+{"retcode": 0}
+{'Content-Type': 'application/json', 'X-Frame-Options': 'SAMEORIGIN', 'Content-Length': '14', 'Vary': 'Cookie', 'Set-Cookie': 'sessionid=5y702dy8547kb3ez9ogqybpeo8946n4r; HttpOnly; Path=/', 'Date': 'Thu, 18 Feb 2021 11:59:32 GMT', 'Server': '0.0.0.0'}
+'''
+```
+
+    获取cookie的两种方式，以及使用场景
+    
+```python
+# coding=utf-8
+# @File     : cookie_test.py
+# @Time     : 2021/2/18 19:35
+# @Author   : jingan
+# @Email    : 3028480064@qq.com
+# @Software : PyCharm
+
+import requests
+
+
+def login(in_data):
+    url = 'http://120.55.190.222:7080/api/mgr/loginReq'
+    payload = in_data
+    resp = requests.post(url=url, data=payload)
+    print(resp.text)
+    """
+    方案一：原生态Cookie，如果后续接口直接使用这个cookie，不增加其他参数就用此方法
+    例如：存在实战和vip测试两个项目，学员登录实战项目的cookie带有sessionid；然后把vip测试项目中的用户名name和密码psw
+    去校验得到一个token值，接着把token值带到实战项目中和sessionid进行二次封装再去访问这个项目接口，就实现了只有vip学员
+    可以登录，普通学员不可登录（其实就是B把A的token值绑定了，保证了vip的权限）
+    """
+    print(resp.cookies)
+    """
+    方案二：如果后续接口使用了这个cookie，需要再增加其他参数认证，则需要重新封装cookie
+    """
+    print(resp.cookies['sessionid'])  # 只获取到sessionid值
+
+if __name__ == '__main__':
+    login({'username': 'auto', 'password': 'sdfsdfsdf'})
+
+
+"""
+{"retcode": 0}
+<RequestsCookieJar[<Cookie sessionid=px2ukbcf1fz9livu3s17pm2t19zx9oot for 120.55.190.222/>]>
+px2ukbcf1fz9livu3s17pm2t19zx9oot
+"""
+```
         
 
 
