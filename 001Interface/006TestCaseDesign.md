@@ -4,12 +4,23 @@
     
 |用例编号|模块|接口名称|优先级|标题|URL|前置条件|请求方式|请求头|请求参数|预期结果|响应预期结果|实际结果|
 |------|---|-------|-----|---|---|------|-------|----|-------|------|----------|------|
-|Login001|登录模块|登录认证|高|用户名正确，密码正确|/account/sLogin|数据库里存在登录用户名和密码|post|无|{"username":"sq0777","password":"xintian"}|登录成功，返回正确信息|{"code": 20000, "data":"{"token": 123}", "flag": "**教育", "msg": "成功", "success": false}|通过代码自动填写|
-|Login002|登录模块|登录认证|中|正确的用户名，密码为空|/account/sLogin|数据库里存在登录用户名和密码|post|无|{"username":"sq0777","password":""}|登录失败，返回错误信息|{"code": 9999, "data":"", "flag": "**教育", "msg": "输入的密码错误!", "success": false}|通过代码自动填写|
-|Login003|登录模块|登录认证|中|用户名为空，密码正确|/account/sLogin|数据库里存在登录用户名和密码|post|无|{"username":"","password":"xintian"}|登录失败，返回错误信息|{"code": 9999, "data": "", "flag": "**教育", "msg": "该用户不存在!", "success": false}|通过代码自动填写|
-|Login004|登录模块|登录认证|中|用户名和密码都为空|/account/sLogin|数据库里存在登录用户名和密码|post|无|{"username":"","password":""}|登录失败，返回错误信息|{"code": 9999, "data": "", "flag": "**教育", "msg": "该用户不存在!", "success": false}|通过代码自动填写|
-|Login005|登录模块|登录认证|高|用户名正确，密码错误|/account/sLogin|数据库里存在登录用户名和密码|post|无|{"username":"sq0777","password":"789"}|登录失败，返回错误信息|{"code": 9999, "data": "", "flag": "**教育", "msg": "输入的密码错误!", "success": false}|通过代码自动填写|
-|Login006|登录模块|登录认证|高|用户名错误，密码正确|/account/sLogin|数据库里存在登录用户名和密码|post|无|{"username":"abcde","password":"xintian"}|登录失败，返回错误信息|{"code": 9999, "data": "", "flag": "**教育", "msg": "该用户不存在!", "success": false}|通过代码自动填写|
+|Login001|登录模块|登录认证|高|用户名正确，密码正确|/account/sLogin|数据库里存在登录用户名和密码|post|无|{"username":"sq0777","password":"xintian"}|
+|Login002|登录模块|登录认证|中|正确的用户名，密码为空|/account/sLogin|数据库里存在登录用户名和密码|post|无|{"username":"sq0777","password":""}|
+|Login003|登录模块|登录认证|中|用户名为空，密码正确|/account/sLogin|数据库里存在登录用户名和密码|post|无|{"username":"","password":"xintian"}|
+|Login004|登录模块|登录认证|中|用户名和密码都为空|/account/sLogin|数据库里存在登录用户名和密码|post|无|{"username":"","password":""}|
+|Login005|登录模块|登录认证|高|用户名正确，密码错误|/account/sLogin|数据库里存在登录用户名和密码|post|无|{"username":"sq0777","password":"789"}|
+|Login006|登录模块|登录认证|高|用户名错误，密码正确|/account/sLogin|数据库里存在登录用户名和密码|post|无|{"username":"abcde","password":"xintian"}|
+
+    接上面表格
+    
+|预期结果|响应预期结果|实际结果|
+|------|----------|------|
+|登录成功，返回正确信息|{"code": 20000, "data":"{"token": 123}", "flag": "**教育", "msg": "成功", "success": false}|通过代码自动填写|
+|登录失败，返回错误信息|{"code": 9999, "data":"", "flag": "**教育", "msg": "输入的密码错误!", "success": false}|通过代码自动填写|
+|登录失败，返回错误信息|{"code": 9999, "data": "", "flag": "**教育", "msg": "该用户不存在!", "success": false}|通过代码自动填写|
+|登录失败，返回错误信息|{"code": 9999, "data": "", "flag": "**教育", "msg": "该用户不存在!", "success": false}|通过代码自动填写|
+|登录失败，返回错误信息|{"code": 9999, "data": "", "flag": "**教育", "msg": "输入的密码错误!", "success": false}|通过代码自动填写|
+|登录失败，返回错误信息|{"code": 9999, "data": "", "flag": "**教育", "msg": "该用户不存在!", "success": false}|通过代码自动填写|
 
 ### Python操作excel
 
@@ -99,5 +110,83 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTM2OTg0NDcsInVzZXJJZCI6MTAxNDg
 
     4. 接着在tools包下新建getExcelData.py文件实现读取excel用例表
        Tools包主要用来存放操作性代码，比如读表、转换数据等
+       
+       执行excel测试用例流程
+        * 1、读取excel数据
+        * 2、把excel读取的数据关联到请求的代码中
+        * 3、写入测试结果到excel
+        
+       导入xlrd模块进行读取excel数据；
+       导入xlwt模块进行写入excel数据；
+       为了防止原始excel用例数据混乱，可将用例写入新的表中而不是原表中，可使用xlutils.copy模块拷贝
+     
+![case](img/case05.png)
+
+    读取excel表格数据代码如下
+    注意这里读取的方法选取：
+        * 这里不可以使用xlrd模块的nrows方法，因为存在一张表包含多个接口的情况，而nrows只能获取行数无法判断内容，所以也无法判断用例是属于哪个接口的
+        * 也不可以使用[start, end]手动计算一个接口的用例来定义范围，因为存在后期如果excel表中进行了删减操作，就会导致[start,end]范围失效
+        * 最好定义行数的下标idx，循环判断用例标题名称是否在表格中
+    
+```python
+# coding=utf-8
+# @File     : getExcelData.py
+# @Time     : 2021/2/3 13:24
+# @Author   : jingan
+# @Email    : 3028480064@qq.com
+# @Software : PyCharm
+
+# Tools包主要用来存放操作性代码，比如读表、转换数据等
+import xlrd
+import json
+from xlutils.copy import copy
+
+
+def get_excel_data(sheet_name, case_name):
+    res_list = []
+    # 用例路径
+    excel_dir = '../data/Delivery_System_excel-V1.5.xls'
+    # 打开excel对象,formatting_info=True表示保持样式
+    work_book = xlrd.open_workbook(excel_dir, formatting_info=True)
+    # 根据表名称获取指定的表内容
+    work_sheet = work_book.sheet_by_name(sheet_name)
+    # 获取一列的数据，判断传入的值是否在这一列中，存在就返回
+    idx = 0
+    # col_values获取整列的值
+    for one in work_sheet.col_values(0):
+        if case_name in one:
+            # 读取表格中数据cell，获取第row+1行，col+1列数据
+            req_body_data = work_sheet.cell(idx, 9).value  # 请求参数body，为后面关联接口做准备（有时也需要获取前置条件）
+            resp_data = work_sheet.cell(idx, 11).value  # 响应数据，为后面断言做准备
+            # 读取excel数据为字符串，转成成字典格式存入列表中
+            res_list.append((json.loads(req_body_data), json.loads(resp_data)))
+        idx += 1
+    return res_list
+
+
+    # for one in range(start_row-1, end_row):
+    #     # 读取表格中数据cell
+    #     req_body_data = work_sheet.cell(one, 9).value  # 请求参数body
+    #     resp_data = work_sheet.cell(one, 11).value  # 响应数据
+    #     res_list.append((req_body_data, resp_data))
+    # return res_list
+
+
+if __name__ == '__main__':
+    for one in get_excel_data('登录模块', 'Login'):
+        print(one)
+    # set_excel_data()
+
+"""
+({'username': 'sq0777', 'password': 'xintian'}, {'code': 20000, 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1OTg1MTE1MDMsInVzZXJJZCI6MSwidXNlcm5hbWUiOiJhZG1pbiJ9.NcuSGdggtGJLx7BdxsB1OA2tEJcs94e4grvs6JZ2p_Q'}, 'flag': '松勤教育', 'msg': '成功', 'success': False})
+({'username': 'sq0777', 'password': ''}, {'code': 9999, 'data': '', 'flag': '松勤教育', 'msg': '输入的密码错误!', 'success': False})
+({'username': '', 'password': 'xintian'}, {'code': 9999, 'data': '', 'flag': '松勤教育', 'msg': '该用户不存在!', 'success': False})
+({'username': '', 'password': ''}, {'code': 9999, 'data': '', 'flag': '松勤教育', 'msg': '该用户不存在!', 'success': False})
+({'username': 'sq0777', 'password': '789'}, {'code': 9999, 'data': '', 'flag': '松勤教育', 'msg': '输入的密码错误!', 'success': False})
+({'username': 'abcde', 'password': 'xintian'}, {'code': 9999, 'data': '', 'flag': '松勤教育', 'msg': '该用户不存在!', 'success': False})
+"""
+```
+       
+    
         
     
