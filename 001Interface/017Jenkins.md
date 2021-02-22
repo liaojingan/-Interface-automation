@@ -283,11 +283,12 @@ ${CHANGES_SINCE_LAST_SUCCESS, reverse=true, format="%c", changesFormat="<li>%d [
     七、构建后操作添加allure report
         输入allure-results
         
-    八、执行shell窗口添加allure报告命令
+    八、执行shell窗口添加allure报告命令和环境数据的输出
         alluredir=${WORKSPACE}/allure-results
+        cp /var/jenkins_home/RunTianXia/report/temp/environment.properties ${WORKSPACE}/allure-results/environment.properties
         exit 0
 
 ![ci](img/ci27.png)   
 
-![ci](img/ci28.png)      	
+![ci](img/ci29.png)      	
        	 
