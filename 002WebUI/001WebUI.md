@@ -54,3 +54,43 @@
     selenium没有给我们提供判断元素是否存在的方法，所以我们可以用匹配元素列表的方式判断。
     现根据表达式匹配元素列表，然后判断列表是否为空，若列表为空，则元素不存在，若列表不为空，则元素存在
 
+### 练习项目
+    
+    1. 先启动项目中mysql的.bat文件，root密码123456、端口3306，启动后不关闭
+       最后一步，单独安装Navicat或workbench客户端，通过客户端连接即可
+    2. 再启动opms.exe
+    3. 浏览器访问：127.0.0.1:8088，账号：libai 密码opms123
+    
+### selenium库和Chromdriver.exe驱动安装
+
+    测试是否可以打开浏览器
+    
+```python
+# coding=utf-8
+# @File     : test.py
+# @Time     : 2021/2/26 8:32
+# @Author   : jingan
+# @Email    : 3028480064@qq.com
+# @Software : PyCharm
+import time
+from selenium import webdriver
+
+# 创建浏览器驱动对象，这里是打开浏览器
+driver = webdriver.Chrome()
+# 访问网址
+driver.get("http://www.baidu.com")
+driver.maximize_window()
+# 找到元素，找到文本输入框
+ele = driver.find_element_by_id("kw")
+# 操作元素，输入内容
+ele.send_keys("习近平")
+time.sleep(1)
+# 找到元素，找到 百度一下 按钮
+ele = driver.find_element_by_id("su")
+# 操作元素，点击按钮
+ele.click()
+
+driver.quit()
+```
+
+    
