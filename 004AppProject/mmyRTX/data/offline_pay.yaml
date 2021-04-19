@@ -1,0 +1,13 @@
+- # test_offline_pay01
+  url: /api/order/offlinePay
+  method: POST
+  detail: 线下支付
+  headers:
+    token: token
+  data:
+    orderId: id                # 订单id
+    payType: 2                 # 支付类型
+    offlinePaymentAmount: 10   # 线下收款金额
+  resp:
+    code: "1000"
+    msg: 支付成功

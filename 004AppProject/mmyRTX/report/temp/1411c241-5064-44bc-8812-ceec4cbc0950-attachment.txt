@@ -1,0 +1,13 @@
+ERROR    root:test_order_manage.py:106 ---回单处理接口用例不通过，请检查问题---
+ERROR    root:test_order_manage.py:106 ---回单处理接口用例不通过，请检查问题---
+ERROR    root:test_order_manage.py:106 ---回单处理接口用例不通过，请检查问题---
+ERROR    root:test_order_manage.py:106 ---回单处理接口用例不通过，请检查问题---
+ERROR    root:test_order_manage.py:106 ---回单处理接口用例不通过，请检查问题---
+ERROR    root:test_order_manage.py:106 ---回单处理接口用例不通过，请检查问题---
+ERROR    root:test_order_manage.py:106 ---回单处理接口用例不通过，请检查问题---
+ERROR    root:test_order_manage.py:106 ---回单处理接口用例不通过，请检查问题---
+ERROR    root:test_order_manage.py:106 ---回单处理接口用例不通过，请检查问题---
+ERROR    root:test_order_manage.py:106 ---回单处理接口用例不通过，请检查问题---
+ERROR    root:test_order_manage.py:106 ---回单处理接口用例不通过，请检查问题---
+ERROR    root:test_order_manage.py:106 ---回单处理接口用例不通过，请检查问题---
+ERROR    root:test_order_manage.py:106 ---回单处理接口用例不通过，请检查问题---

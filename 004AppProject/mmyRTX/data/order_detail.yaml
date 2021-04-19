@@ -1,0 +1,11 @@
+- # test_order_detail01
+  url: /api/order/orderDetail
+  method: POST
+  detail: 查看订单详情
+  headers:
+    token: token
+  data:
+    orderId: order_id         # 订单id
+  resp:
+    code: "1000"
+    msg: 成功

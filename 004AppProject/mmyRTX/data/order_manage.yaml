@@ -1,0 +1,12 @@
+- # test_confirm_delivery01
+  url: /api/order/dispatchingOrder
+  method: POST
+  detail: 点击接单按钮，确认配送成功
+  headers:
+    token: token
+  data:
+    id: order_id         # 订单id
+  resp:
+    code: "1000"
+    msg: 接单成功~
+

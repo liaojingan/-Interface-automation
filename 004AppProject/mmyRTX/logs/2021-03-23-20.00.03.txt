@@ -1,0 +1,7 @@
+2021-03-23 20:00:07,698 - test_order_manage.py[line:136] - ERROR: ---线下支付接口用例不通过，请检查问题---
+2021-03-23 20:00:08,687 - test_order_manage.py[line:136] - ERROR: ---线下支付接口用例不通过，请检查问题---
+2021-03-23 20:00:09,500 - test_order_manage.py[line:136] - ERROR: ---线下支付接口用例不通过，请检查问题---
+2021-03-23 20:00:10,618 - test_order_manage.py[line:136] - ERROR: ---线下支付接口用例不通过，请检查问题---
+2021-03-23 20:00:11,481 - test_order_manage.py[line:136] - ERROR: ---线下支付接口用例不通过，请检查问题---
+2021-03-23 20:00:12,220 - test_order_manage.py[line:136] - ERROR: ---线下支付接口用例不通过，请检查问题---
+2021-03-23 20:00:12,692 - test_order_manage.py[line:136] - ERROR: ---线下支付接口用例不通过，请检查问题---

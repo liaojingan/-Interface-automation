@@ -1,0 +1,75 @@
+- # test_order_home_page01
+  url: /api/index/deliveryIndex
+  method: POST
+  detail: 按时间查看今日行程订单
+  headers:
+    token: token
+  data:
+    indexState: 0         # 首页状态（0今日行程1明日行程2待处理3待回单）
+    sort: 0               # （0时间1排位号2提货单）
+    pageSize: 10          # 当前条数
+    pageIndex: 1          # 当前页
+  resp:
+    code: "1000"
+    msg: 成功
+
+- # test_order_home_page02
+  url: /api/index/deliveryIndex
+  method: POST
+  detail: 按排位号查询今日行程订单
+  headers:
+    token: token
+  data:
+    indexState: 0         # 首页状态（0今日行程1明日行程2待处理3待回单）
+    sort: 1               # （0时间1排位号2提货单）
+    pageSize: 10          # 当前条数
+    pageIndex: 1          # 当前页
+  resp:
+    code: "1000"
+    msg: 成功
+
+- # test_order_home_page03
+  url: /api/index/deliveryIndex
+  method: POST
+  detail: 按提货单查询今日行程订单
+  headers:
+    token: token
+  data:
+    indexState: 0         # 首页状态（0今日行程1明日行程2待处理3待回单）
+    sort: 2               # （0时间1排位号2提货单）
+    pageSize: 10          # 当前条数
+    pageIndex: 1          # 当前页
+  resp:
+    code: "1000"
+    msg: 成功
+
+- # test_order_home_page04
+  url: /api/index/deliveryIndex
+  method: POST
+  detail: 输入任意sort值，默认时间排序
+  headers:
+    token: token
+  data:
+    indexState: 0          # 首页状态（0今日行程1明日行程2待处理3待回单）
+    sort: 2                # （0时间1排位号2提货单）
+    pageSize: 10           # 当前条数
+    pageIndex: 1           # 当前页
+  resp:
+    code: "1000"
+    msg: 成功
+
+- # test_order_home_page05
+  url: /api/index/deliveryIndex
+  method: POST
+  detail: pageSize参数格式错误
+  headers:
+    token: token
+  data:
+    indexState: 0          # 首页状态（0今日行程1明日行程2待处理3待回单）
+    sort: 2                # （0时间1排位号2提货单）
+    pageSize: 10           # 当前条数
+    pageIndex: 1           # 当前页
+  resp:
+    code: "1000"
+    msg: pageSize格式错误
+

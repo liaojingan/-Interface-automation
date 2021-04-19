@@ -1,0 +1,1 @@
+INFO     root:test_order_manage.py:52 ---列表中该订单都已确认配送~---

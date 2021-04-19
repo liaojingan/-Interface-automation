@@ -1,0 +1,182 @@
+- # test_receipt_order01
+  url: /api/order/receiptOrder
+  method: POST
+  detail: 回单处理(余额支付、买二回二)
+  headers:
+    token: token
+  data:
+    backBucketList:                     # 新增回桶信息
+    -
+      brandId: test                     # 商品品牌id
+      bucketFallAmout: ""               # 回单桶差金额
+      bucketId: test                    # 空桶子id
+      bucketMainId: test                # 空桶主id
+      mortgageBucketFallAmout: ""       # 退押桶差金额
+      number: 2                         # 回桶数量
+    orderId: id                         # 订单id
+    returnOrderPayType: 0               # 回单支付类型
+  resp:
+    code: "1000"
+    msg: 回单成功
+
+- # test_receipt_order02
+  url: /api/order/receiptOrder
+  method: POST
+  detail: 回单处理(现金支付、买一回零)
+  headers:
+    token: token
+  data:
+    backBucketList:                     # 新增回桶信息
+    -
+      brandId: test                     # 商品品牌id
+      bucketFallAmout: ""               # 回单桶差金额
+      bucketId: test                    # 空桶子id
+      bucketMainId: test                # 空桶主id
+      mortgageBucketFallAmout: ""       # 退押桶差金额
+      number: 0                         # 回桶数量
+    orderId: id                         # 订单id
+    returnOrderPayType: 0               # 回单支付类型
+  resp:
+    code: "1000"
+    msg: 回单成功
+
+#- # test_receipt_order03
+#  url: /api/order/receiptOrder
+#  method: POST
+#  detail: 回单处理(签单支付、买二回一)
+#  headers:
+#    token: token
+#  data:
+#    backBucketList:                     # 新增回桶信息
+#    -
+#      brandId: test                     # 商品品牌id
+#      bucketFallAmout: ""               # 回单桶差金额
+#      bucketId: test                    # 空桶子id
+#      bucketMainId: test                # 空桶主id
+#      mortgageBucketFallAmout: ""       # 退押桶差金额
+#      number: 1                         # 回桶数量
+#    orderId: id                         # 订单id
+#    returnOrderPayType: 0               # 回单支付类型
+#  resp:
+#    code: "1000"
+#    msg: 回单成功
+#
+#- # test_receipt_order04
+#  url: /api/order/receiptOrder
+#  method: POST
+#  detail: 回单处理(退押，买一回一)
+#  headers:
+#    token: token
+#  data:
+#    backBucketList:                     # 新增回桶信息
+#    -
+#      brandId: test                     # 商品品牌id
+#      bucketFallAmout: ""               # 回单桶差金额
+#      bucketId: test                    # 空桶子id
+#      bucketMainId: test                # 空桶主id
+#      mortgageBucketFallAmout: ""       # 退押桶差金额
+#      number: 1                         # 回桶数量
+#    orderId: id                         # 订单id
+#    returnOrderPayType: 0               # 回单支付类型
+#  resp:
+#    code: "1000"
+#    msg: 回单成功
+#
+#- # test_receipt_order05
+#  url: /api/order/receiptOrder
+#  method: POST
+#  detail: 回单处理(单押桶，买一回零)
+#  headers:
+#    token: token
+#  data:
+#    backBucketList:                     # 新增回桶信息
+#    -
+#      brandId: test                     # 商品品牌id
+#      bucketFallAmout: ""               # 回单桶差金额
+#      bucketId: test                    # 空桶子id
+#      bucketMainId: test                # 空桶主id
+#      mortgageBucketFallAmout: ""       # 退押桶差金额
+#      number: 0                         # 回桶数量
+#    orderId: id                         # 订单id
+#    returnOrderPayType: 0               # 回单支付类型
+#  resp:
+#    code: "1000"
+#    msg: 回单成功
+#
+#- # test_receipt_order06
+#  url: /api/order/receiptOrder
+#  method: POST
+#  detail: 回单处理(单售桶，买一回零)
+#  headers:
+#    token: token
+#  data:
+#    backBucketList:                     # 新增回桶信息
+#    -
+#      brandId: test                     # 商品品牌id
+#      bucketFallAmout: ""               # 回单桶差金额
+#      bucketId: test                    # 空桶子id
+#      bucketMainId: test                # 空桶主id
+#      mortgageBucketFallAmout: ""       # 退押桶差金额
+#      number: 0                         # 回桶数量
+#    orderId: id                         # 订单id
+#    returnOrderPayType: 0               # 回单支付类型
+#  resp:
+#    code: "1000"
+#    msg: 回单成功
+#
+#- # test_receipt_order07
+#  url: /api/order/receiptOrder
+#  method: POST
+#  detail: 回单处理(换漏，买一回一)
+#  headers:
+#    token: token
+#  data:
+#    backBucketList:                     # 新增回桶信息
+#    -
+#      brandId: test                     # 商品品牌id
+#      bucketFallAmout: ""               # 回单桶差金额
+#      bucketId: test                    # 空桶子id
+#      bucketMainId: test                # 空桶主id
+#      mortgageBucketFallAmout: ""       # 退押桶差金额
+#      number: 1                         # 回桶数量
+#    orderId: id                         # 订单id
+#    returnOrderPayType: 0               # 回单支付类型
+#  resp:
+#    code: "1000"
+#    msg: 回单成功
+
+#- # test_receipt_order04
+#  url: /api/order/receiptOrder
+#  method: POST
+#  detail: 回单处理(物票支付、买五回二押三)
+#  headers:
+#    token: token
+#  data:
+#    backBucketList:                     # 新增回桶信息
+#    -
+#      brandId: test                     # 商品品牌id
+#      bucketFallAmout: ""               # 回单桶差金额
+#      bucketId: test                    # 空桶子id
+#      bucketMainId: test                # 空桶主id
+#      mortgageBucketFallAmout: ""       # 退押桶差金额
+#      number: 1                         # 回桶数量
+#    -
+#    mortgageBucketList:                 # 新增押桶信息
+#      brandId: test                     # 商品品牌id
+#      bucketFallAmout: ""               # 押桶差金额
+#      bucketId: test                    # 空桶子id
+#      bucketMainId: test                # 空桶主id
+#      mortgageBucketFallAmout: ""       # 退押桶差金额
+#      number: 3                         # 押桶数量
+#    orderId: id                         # 订单id
+#    returnOrderPayType: 0               # 回单支付类型
+#  resp:
+#    code: "1000"
+#    msg: 回单成功
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+- # test_complete_delivery01
+  url: /api/order/confirmOrder
+  method: POST
+  detail: 点击完成配送按钮，不填写配送单，成功配送
+  headers:
+    token: token
+  data:
+    orderId: order_id         # 订单id
+    isDeliveryForm: 0
+  resp:
+    code: "1000"
+    msg: 提交成功，订单完成配送~

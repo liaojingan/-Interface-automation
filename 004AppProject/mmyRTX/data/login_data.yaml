@@ -1,0 +1,124 @@
+- # test_psw_login01
+  url: /api/login/loginByPwd         # 请求url
+  method: POST                       # 请求方法
+  detail: 用户名正确，密码正确           # 用例标题
+  headers:                           # 请求头（登录请求头为空）
+  data:                              # 请求参数
+    username: 18829843843
+    password: 888888
+    deviceID: 0
+    m: 1
+    identityType: 0
+  resp:                              # 响应数据
+    code: "1000"
+    msg: 用户登录成功。
+
+- # test_psw_login02
+  url: /api/login/loginByPwd
+  method: POST
+  detail: 用户名正确，密码为空
+  headers:
+  data:
+    username: 18829843843
+    password: ""
+    deviceID: 0
+    m: 1
+    identityType: 1
+  resp:
+    code: "9999"
+    msg: 密码不能为空
+
+- # test_psw_login03
+  url: /api/login/loginByPwd
+  method: POST
+  detail: 用户名为空，密码正确
+  headers:
+  data:
+    username: ""
+    password: 888888
+    deviceID: 0
+    m: 1
+    identityType: 1
+  resp:
+    code: "9999"
+    msg: 账号不能为空
+
+- # test_psw_login04
+  url: /api/login/loginByPwd
+  method: POST
+  detail: 用户名错误，密码正确
+  headers:
+  data:
+    username: 18829843800
+    password: 888888
+    deviceID: 0
+    m: 1
+    identityType: 1
+  resp:
+    code: "1000"
+    msg: 该帐号不存在或密码错误。
+
+- # test_psw_login05
+  url: /api/login/loginByPwd
+  method: POST
+  detail: 用户名正确，密码错误
+  headers:
+  data:
+    username: 18829843843
+    password: 11111
+    deviceID: 0
+    m: 1
+    identityType: 1
+  resp:
+    code: "1000"
+    msg: 该帐号不存在或密码错误。
+
+- # test_psw_login06
+  url: /api/login/loginByPwd
+  method: POST
+  detail: 用户名和密码为空
+  headers:
+  data:
+    username: ""
+    password: ""
+    deviceID: 0
+    m: 1
+    identityType: 1
+  resp:
+    code: "9999"
+    message: 账号不能为空
+
+- # test_psw_login07
+  url: /api/login/loginByPwd
+  method: POST
+  detail: 设备标识为空
+  headers:
+  data:
+    username: 18829843843
+    password: 888888
+    deviceID: ""
+    m: 1
+    identityType: 1
+  resp:
+    code: "9999"
+    msg: 设备唯一标示不能为空
+
+- # test_psw_login08
+  url: /api/login/loginByPwd
+  method: POST
+  detail: 设备唯一标示错误
+  headers:
+  data:
+    username: 18829843843
+    password: 888888
+    deviceID: 333
+    m: 1
+    identityType: 0
+  resp:
+    code: "1000"
+    msg: 参数错误
+
+
+
+
+

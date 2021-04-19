@@ -1,0 +1,4 @@
+2021-02-25 16:59:03,359 - test_order_manage.py[line:51] - ERROR: ---确认配送接口用例不通过，请检查问题---
+2021-02-25 16:59:03,933 - test_order_manage.py[line:51] - ERROR: ---确认配送接口用例不通过，请检查问题---
+2021-02-25 16:59:04,292 - test_order_manage.py[line:70] - ERROR: ---完成配送接口用例不通过，请检查问题---
+2021-02-25 16:59:04,623 - test_order_manage.py[line:70] - ERROR: ---完成配送接口用例不通过，请检查问题---

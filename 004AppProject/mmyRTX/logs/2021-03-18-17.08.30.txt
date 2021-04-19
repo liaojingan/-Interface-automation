@@ -1,0 +1,12 @@
+2021-03-18 17:08:33,837 - test_order_manage.py[line:80] - ERROR: ---完成配送接口用例不通过，请检查问题---
+2021-03-18 17:08:33,843 - test_order_manage.py[line:80] - ERROR: ---完成配送接口用例不通过，请检查问题---
+2021-03-18 17:08:33,844 - test_order_manage.py[line:80] - ERROR: ---完成配送接口用例不通过，请检查问题---
+2021-03-18 17:08:33,844 - test_order_manage.py[line:80] - ERROR: ---完成配送接口用例不通过，请检查问题---
+2021-03-18 17:08:33,848 - test_order_manage.py[line:80] - ERROR: ---完成配送接口用例不通过，请检查问题---
+2021-03-18 17:08:33,857 - test_order_manage.py[line:80] - ERROR: ---完成配送接口用例不通过，请检查问题---
+2021-03-18 17:08:33,858 - test_order_manage.py[line:80] - ERROR: ---完成配送接口用例不通过，请检查问题---
+2021-03-18 17:08:33,865 - test_order_manage.py[line:80] - ERROR: ---完成配送接口用例不通过，请检查问题---
+2021-03-18 17:08:33,872 - test_order_manage.py[line:80] - ERROR: ---完成配送接口用例不通过，请检查问题---
+2021-03-18 17:08:33,872 - test_order_manage.py[line:80] - ERROR: ---完成配送接口用例不通过，请检查问题---
+2021-03-18 17:08:33,911 - test_order_manage.py[line:80] - ERROR: ---完成配送接口用例不通过，请检查问题---
+2021-03-18 17:08:33,946 - test_order_manage.py[line:80] - ERROR: ---完成配送接口用例不通过，请检查问题---

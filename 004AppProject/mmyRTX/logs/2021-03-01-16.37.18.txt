@@ -1,0 +1,2 @@
+2021-03-01 16:37:18,982 - test_order_home_page.py[line:48] - ERROR: ----首页接口用例不通过，请检查问题---
+2021-03-01 16:37:19,262 - test_order_home_page.py[line:48] - ERROR: ----首页接口用例不通过，请检查问题---

@@ -1,0 +1,1 @@
+ERROR    root:test_order_manage.py:44 ---确认配送接口用例不通过，请检查问题---

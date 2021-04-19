@@ -1,0 +1,1 @@
+INFO     root:test_order_manage.py:52 ---列表中不存在未确认配送的订单---

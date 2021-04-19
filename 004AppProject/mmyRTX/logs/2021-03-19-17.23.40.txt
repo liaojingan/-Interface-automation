@@ -1,0 +1,14 @@
+2021-03-19 17:23:46,281 - test_order_manage.py[line:105] - ERROR: ---回单处理接口用例不通过，请检查问题---
+2021-03-19 17:23:47,253 - test_order_manage.py[line:105] - ERROR: ---回单处理接口用例不通过，请检查问题---
+2021-03-19 17:23:48,213 - test_order_manage.py[line:105] - ERROR: ---回单处理接口用例不通过，请检查问题---
+2021-03-19 17:23:49,232 - test_order_manage.py[line:105] - ERROR: ---回单处理接口用例不通过，请检查问题---
+2021-03-19 17:23:50,239 - test_order_manage.py[line:105] - ERROR: ---回单处理接口用例不通过，请检查问题---
+2021-03-19 17:23:51,218 - test_order_manage.py[line:105] - ERROR: ---回单处理接口用例不通过，请检查问题---
+2021-03-19 17:23:52,219 - test_order_manage.py[line:105] - ERROR: ---回单处理接口用例不通过，请检查问题---
+2021-03-19 17:23:53,235 - test_order_manage.py[line:105] - ERROR: ---回单处理接口用例不通过，请检查问题---
+2021-03-19 17:23:54,220 - test_order_manage.py[line:105] - ERROR: ---回单处理接口用例不通过，请检查问题---
+2021-03-19 17:23:55,220 - test_order_manage.py[line:105] - ERROR: ---回单处理接口用例不通过，请检查问题---
+2021-03-19 17:23:56,244 - test_order_manage.py[line:105] - ERROR: ---回单处理接口用例不通过，请检查问题---
+2021-03-19 17:23:57,219 - test_order_manage.py[line:105] - ERROR: ---回单处理接口用例不通过，请检查问题---
+2021-03-19 17:23:58,228 - test_order_manage.py[line:105] - ERROR: ---回单处理接口用例不通过，请检查问题---
+2021-03-19 17:23:59,239 - test_order_manage.py[line:105] - ERROR: ---回单处理接口用例不通过，请检查问题---
